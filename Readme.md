@@ -111,6 +111,7 @@ python main_tip_finetune.py --world-size 1 --dataset vcoco --data-root vcoco/ --
 
 
 ## Mindspore CMD
+Download the pre-trained CLIP weight from [Here](https://github.com/XixinYang/open_clip-mindspore).
 ### HICO-DET
 ```
 python main_tip_finetune.py --world-size 1 --pretrained checkpoints/detr-r50-hicodet.pth --output-dir checkpoints/hico --use_insadapter --num_classes 117 --use_multi_hot --file1 hicodet_pkl_files/union_embeddings_cachemodel_crop_padding_zeros_vitb16.p --clip_dir_vit checkpoints/pretrained_clip/ViT_B_16-99cbeeee.ckpt --ms --eval --resume checkpoints/ada_cm_hico_vit16.pt
