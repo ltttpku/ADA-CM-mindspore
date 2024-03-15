@@ -1,4 +1,4 @@
-# [ICCV 2023] Efficient Adaptive Human-Object Interaction Detection with Concept-guided Memory
+# [ICCV 2023] Efficient Adaptive Human-Object Interaction Detection with Concept-guided Memory (with mindspore implementation)
 
 ## Dataset 
 Follow the process of [UPT](https://github.com/fredzzhang/upt).
@@ -107,6 +107,13 @@ python main_tip_finetune.py --world-size 1 --dataset vcoco --data-root vcoco/ --
 #### Cache detection results for evaluation on V-COCO
 ```
 python main_tip_finetune.py --world-size 1 --dataset vcoco --data-root vcoco/ --partitions trainval test --pretrained checkpoints/detr-r50-vcoco.pth --output-dir checkpoints/vcoco-injector-r50 --use_insadapter --num_classes 24 --use_multi_hot --file1 vcoco_pkl_files/vcoco_union_embeddings_cachemodel_crop_padding_zeros_vit16.p  --clip_dir_vit checkpoints/pretrained_clip/ViT-B-16.pt --cache --resume CKPT_PATH
+```
+
+
+## Mindspore CMD
+### HICO-DET
+```
+python main_tip_finetune.py --world-size 1 --pretrained checkpoints/detr-r50-hicodet.pth --output-dir checkpoints/hico --use_insadapter --num_classes 117 --use_multi_hot --file1 hicodet_pkl_files/union_embeddings_cachemodel_crop_padding_zeros_vitb16.p --clip_dir_vit checkpoints/pretrained_clip/ViT_B_16-99cbeeee.ckpt --ms --eval --resume checkpoints/ada_cm_hico_vit16.pt
 ```
 
 ### Model Zoo
